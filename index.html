@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 1</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="form-container">
+        <form action="#" method="post">
+            <h2>Транспортные средства и водители</h2>
+
+            <div class="form-elem">
+                <label for="gos-number">Гос-номер</label>
+                <input data-mask="A000AA000" name="gos-number" id="gos-number" type="text"
+                    title="А001АА11 или А111АА111" required
+                    pattern="[АВЕКМНОРСТУХавекмнорстух][0-9]{3}[АВЕКМНОРСТУХавекмнорстух]{2}[0-9]{2,3}"
+                    placeholder="Укажите Гос-номер">
+            </div>
+
+            <div class="form-elem">
+                <label for="car">Транспортное средство</label>
+                <input name="car" id="car" type="text" required placeholder="Транспортное средство">
+            </div>
+
+            <div class="form-elem">
+                <label for="date-come">Ориентировочная дата прибытия к покупателю</label>
+                <input name="date-come" id="date-come" type="text" required placeholder="Дата*"
+                    onfocus="(this.type='date')">
+            </div>
+
+            <h3>Данные о водителе</h3>
+            <div class="form-elem">
+                <label for="fio">ФИО</label>
+                <input name="fio" id="fio" type="text" required placeholder="Укажите ФИО водителя">
+            </div>
+
+            <div class="form-elem form-passport">
+                <label for="passport-series">Паспортные данные</label>
+                <input name="passport-series" id="passport-series" minlength="4" type="text" required
+                    placeholder="Серия" pattern="\d{4}">
+                <input name="passport-number" id="passport-num" minlength="6" type="text" required placeholder="Номер"
+                    pattern="\d{6}">
+            </div>
+
+            <div class="form-elem">
+                <label for="issued">Кем выдан</label>
+                <input name="issued" id="issued" type="text" required placeholder="Кем выдан">
+            </div>
+
+            <div class="form-elem">
+                <label for="when-issued">Когда выдан</label>
+                <input name="when-issued" id="when-issued" type="text" required placeholder="Когда выдан"
+                    onfocus="(this.type='date')">
+            </div>
+
+            <div class="form-elem">
+                <button class="btn-submit" type="submit">Отправить</button>
+                <button class="btn-reset" type="reset">Отмена</button>
+            </div>
+        </form>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
